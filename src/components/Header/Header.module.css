@@ -1,3 +1,13 @@
 .container{
-    width: 100%;
+    width: 100vw;
+    height: 64px;
+    background-color: #001D3D;
+
+    color: white;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 16px;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
 }
