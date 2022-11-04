@@ -1,8 +1,8 @@
 import { createContext, useContext } from "react"
-export type GlobalContent = {
-  title: string
+export type AppContextProps = {
+  appTitle: string
 }
-export const AppContext = createContext<GlobalContent>({
-    title: 'Hello World'
+export const AppContext = createContext<AppContextProps>({
+    appTitle: 'Hello World'
 })
-export const useGlobalContext = () => useContext(AppContext)
+export const useAppContext = () => useContext(AppContext)
