@@ -1,0 +1,1 @@
+export const LoadingView = () => <div>Loading</div>
