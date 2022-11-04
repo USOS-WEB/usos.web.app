@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import { Header } from '../../components/Header/Header'
 import { Button } from '../../components/Button/Button'
 import { useState } from 'react'
+import Spinner from '../../components/Spinner/Spinner'
 
 interface ScanQRViewProps {
   title: string
@@ -17,27 +18,43 @@ export const ScanQRView = ({ title }: ScanQRViewProps) => {
     const val = e.target.value
     setVal(val)
   }
+
+  const [isSpinnerVisible, setIsSpinnerVisible] = useState(false)
+
   return (
     <>
-      <Header title="kutas" />
-      <QrReader
-        onResult={(result, error) => {
-          if (result) {
-            dispatch({ type: 'setQrData', payload: result.getText() })
-            navigate('/search/' + result.getText())
-          }
+      <Header title="Uniwersalny System Odnalezienia Sal" />
+      {!isSpinnerVisible && (
+        <QrReader
+          onResult={(result, error) => {
+            if (result) {
+              dispatch({ type: 'setQrData', payload: result.getText() })
+              navigate('/search/' + result.getText())
+            }
 
-          if (error) {
-          }
-        }}
-        constraints={{}}
-      />
+            if (error) {
+            }
+          }}
+          constraints={{}}
+        />
+      )}
+      {!isSpinnerVisible && (
+        <div className="downPanel" style={{ textAlign: 'center' }}>
+          <p>...lub wpisz liczbę pod kodem QR:</p>
+          <input placeholder="6 cyfrowy kod" onChange={e => handleInput(e)}></input>
+          <br />
+          <br />
+          <Button
+            text="Submit"
+            onClick={() => {
+              setIsSpinnerVisible(true)
+              //setTimeout(() => navigate('/search/' + value), 5000)
+            }}
+          ></Button>
+        </div>
+      )}
 
-      <div className="downPanel" style={{ textAlign: 'center' }}>
-        <p>...lub wpisz liczbę pod kodem QR:</p>
-        <input placeholder="6 cyfrowy kod" onChange={e => handleInput(e)}></input>
-        <Button text="Submit" onClick={() => navigate('/search/' + value)}></Button>
-      </div>
+      {isSpinnerVisible && <Spinner />}
     </>
   )
 }
