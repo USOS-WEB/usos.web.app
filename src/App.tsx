@@ -1,6 +1,6 @@
 import { useReducer } from 'react'
 import { reducer, defaultAppContextState } from './context/AppContext'
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import { AppContext } from './context/AppContext'
 import { LoadingView } from './views/LoadingView/LoadingView'
 import { MapView } from './views/MapView/MapView'
@@ -11,9 +11,11 @@ function App() {
   return (
     <AppContext.Provider value={{state, dispatch}} >
         <Router>
-          <Route path="/" element={<ScanQRView title="ScanQRView"/>} />
-          <Route path="/Loading" element={<LoadingView />} /> 
-          <Route path="/Map" element={<MapView />} />
+          <Routes>
+            <Route path="/" element={<ScanQRView title="ScanQRView"/>} />
+            <Route path="/Loading" element={<LoadingView />} />
+            <Route path="/Map" element={<MapView />} />
+          </Routes>
         </Router> 
       </AppContext.Provider>
     )
