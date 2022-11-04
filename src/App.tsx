@@ -5,6 +5,7 @@ import { AppContext } from './context/AppContext'
 import { LoadingView } from './views/LoadingView/LoadingView'
 import { MapView } from './views/MapView/MapView'
 import { ScanQRView } from './views/ScanQRView/ScanQRView'
+import { SearchPlaceView } from './views/SearchPlaceView/SearchPlaceView';
 
 function App() {
   const [state, dispatch] = useReducer(reducer, defaultAppContextState);
@@ -15,6 +16,7 @@ function App() {
             <Route path="/" element={<ScanQRView title="ScanQRView"/>} />
             <Route path="/Loading" element={<LoadingView />} />
             <Route path="/Map" element={<MapView />} />
+            <Route path="/Search" element={<SearchPlaceView />} />
           </Routes>
         </Router> 
       </AppContext.Provider>
