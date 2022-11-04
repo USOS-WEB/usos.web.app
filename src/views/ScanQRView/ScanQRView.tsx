@@ -6,12 +6,12 @@ interface ScanQRViewProps {
 }
 
 export const ScanQRView = ({ title }: ScanQRViewProps) => {
-  const { appTitle } = useAppContext()
+  const { state } = useAppContext()
 
   return (
     <>
       <div>{title}</div>
-      <div>{appTitle}</div>
+      <div>{state.appTitle}</div>
       <QrReader
         onResult={(result, error) => {
           if (result) {
