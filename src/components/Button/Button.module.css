@@ -7,12 +7,12 @@
     width: 90vw;
     height: 58px;
 
-    background-color: #4D5DFA;
+    background-color: #001D3D;
+    border-radius: 15px;
     border-style: none;
     box-shadow: 4px 8px 24px rgba(77, 93, 250, 0.25);
     border-radius: 100px;
-} 
 
 .button:active {
-    background-color: #3f52ff;
+    background-color: #002e5e;
 }
