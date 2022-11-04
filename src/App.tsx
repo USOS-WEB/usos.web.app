@@ -6,9 +6,7 @@ import { LoadingView } from './views/LoadingView/LoadingView'
 import { MapView } from './views/MapView/MapView'
 import { ScanQRView } from './views/ScanQRView/ScanQRView'
 
-
 function App() {
-  
   const [state, dispatch] = useReducer(reducer, defaultAppContextState);
   return (
     <AppContext.Provider value={{state, dispatch}} >
@@ -22,3 +20,4 @@ function App() {
 }
 
 export default App
+
