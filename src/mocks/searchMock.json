@@ -1,0 +1,44 @@
+{
+    "path": [
+        {
+            "order": 0,
+            "id": 123,
+            "name": "drzwi",
+            "floors": ["parter"],
+            "img": "URL",
+            "description": "",
+            "mapCoordinates": [[50,50], [200,50], [ 250,100], [250,150], [20,50]] 
+        },
+        {
+            "order": 1,
+            "name": "korytarz",
+            "id": 345,
+            "floors": ["parter"],
+            "img": null,
+            "description": null,
+            "mapCoordinates": [[100, 100], [0, 0], [ 100, 0 ], [ 0, 100]] 
+        },
+        {
+            "order": 2,        
+            "name": "schody",
+            "id": 666,
+            "floors": ["parter", "pietro"],
+            "mapCoordinates": [[10, 20], [30, 40], [ 50, 60 ]] 
+            
+        },
+        {
+            "order": 3,
+            "name": "sala",
+            "id": 456,
+            "floors": ["pietro"],
+            "mapCoordinates": [[10, 20], [30, 40], [ 50, 60 ]] 
+        }
+    ],
+
+    "floors": {
+        "parter": {
+            "img": "<url>",
+            "imgsize": [400, 400] 
+        }
+    }
+}

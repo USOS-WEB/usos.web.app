@@ -1,0 +1,20 @@
+.container{
+
+}
+
+.img{
+    position: absolute;
+    top:0;
+    left:0;
+    z-index: -2;
+    width: 400px;
+    height: 400px;
+}
+
+.polygon{
+    -webkit-clip-path:polygon(0 0, 100% 35%, 100% 65%, 0% 100%);
+    clip-path: polygon(0 0, 100% 35%, 100% 65%, 0% 100%);
+    width:400px;
+    height:400px;
+    background:#E0E6E5;
+}
