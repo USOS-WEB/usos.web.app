@@ -1,30 +1,33 @@
-import { createContext, useContext } from "react"
-import {SET_APP_TITLE} from './Actions'
+import { createContext, useContext } from 'react'
+import { SET_APP_TITLE } from './Actions'
 
 export type AppContextState = {
-    appTitle: string
+  appTitle: string
+  qrData: string
 }
 
 export const defaultAppContextState = {
-    appTitle: 'USOS.WEB.APP'
+  appTitle: 'USOS.WEB.APP',
+  qrData: 'No data',
 }
 
-
-export function reducer(state: AppContextState, action: {type: string, payload: any }) {
-    switch (action.type) {
-      case SET_APP_TITLE :
-        return {...state, appTitle: action.payload};
-      default:
-        throw new Error();
-    }
+export function reducer(state: AppContextState, action: { type: string; payload: any }) {
+  switch (action.type) {
+    case SET_APP_TITLE:
+      return { ...state, appTitle: action.payload }
+    case 'setQrData':
+      return { ...state, qrData: action.payload }
+    default:
+      throw new Error()
+  }
 }
 
 export const AppContext = createContext<{
-    state: AppContextState;
-    dispatch: React.Dispatch<any>;
-  }>({
-    state: defaultAppContextState,
-    dispatch: () => null
-  });
+  state: AppContextState
+  dispatch: React.Dispatch<any>
+}>({
+  state: defaultAppContextState,
+  dispatch: () => null,
+})
 
 export const useAppContext = () => useContext(AppContext)
