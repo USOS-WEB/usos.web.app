@@ -12,6 +12,8 @@
     background-color: #001D3D;
     border-radius: 15px;
     border-style: none;
+    
+    margin: 24px 0;
 }
 
 .button:active {
