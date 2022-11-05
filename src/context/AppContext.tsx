@@ -10,7 +10,7 @@ export type AppContextState = {
 }
 
 export const defaultAppContextState = {
-  appTitle: 'USOS - Uprzejmie Ssij OS',
+  appTitle: 'Uniwersalny System Odnalezienia Sal',
   qrData: 'No data',
   mapResponseData: null,
   currentChosenFloor: ''
@@ -19,6 +19,8 @@ export const defaultAppContextState = {
 export function reducer(state: AppContextState, action: { type: string; payload: any }) {
   console.log(action);
   switch (action.type) {
+    case 'SET_DEFAULT_STATE':
+      return defaultAppContextState
     case SET_APP_TITLE:
       return { ...state, appTitle: action.payload }
     case 'setQrData':
