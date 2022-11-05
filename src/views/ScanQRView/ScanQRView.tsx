@@ -16,7 +16,7 @@ export const ScanQRView = ({ title }: ScanQRViewProps) => {
   const [value, setVal] = useState()
   const handleInput = (e: any) => {
     const val = e.target.value
-    setVal(val)
+    dispatch({ type: 'setQrData', payload: val })
   }
 
   const [isSpinnerVisible, setIsSpinnerVisible] = useState(false)
@@ -47,8 +47,10 @@ export const ScanQRView = ({ title }: ScanQRViewProps) => {
           <Button
             text="Submit"
             onClick={() => {
-              setIsSpinnerVisible(true)
-              //setTimeout(() => navigate('/search/' + value), 5000)
+              if (state.qrData) {
+                setIsSpinnerVisible(true)
+                setTimeout(() => navigate('/search/' + state.qrData), 5000)
+              }
             }}
           ></Button>
         </div>
