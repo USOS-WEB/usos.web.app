@@ -24,20 +24,27 @@ export const ScanQRView = ({ title }: ScanQRViewProps) => {
   return (
     <>
       <Header title="Uniwersalny System Odnalezienia Sal" />
+      <br />
+      <br />
+      <h2 style={{ fontSize: 'bold', paddingLeft: '15px' }}>Nie możesz znaleźć sali?</h2>
+      <h3 style={{ paddingLeft: '15px' }}>Zeskanuj najbliższy kod QR...</h3>
       {!isSpinnerVisible && (
-        <QrReader
-          onResult={(result, error) => {
-            if (result) {
-              dispatch({ type: 'setQrData', payload: result.getText() })
-              navigate('/search/' + result.getText())
-            }
+        <div style={{ margin: '0 15px' }}>
+          <QrReader
+            onResult={(result, error) => {
+              if (result) {
+                dispatch({ type: 'setQrData', payload: result.getText() })
+                navigate('/search/' + result.getText())
+              }
 
-            if (error) {
-            }
-          }}
-          constraints={{}}
-        />
+              if (error) {
+              }
+            }}
+            constraints={{}}
+          />
+        </div>
       )}
+
       {!isSpinnerVisible && (
         <div className="downPanel" style={{ textAlign: 'center' }}>
           <p>...lub wpisz liczbę pod kodem QR:</p>
@@ -53,6 +60,13 @@ export const ScanQRView = ({ title }: ScanQRViewProps) => {
               }
             }}
           ></Button>
+          <br />
+          <footer>
+            <h5 style={{ padding: '10px' }}>
+              Pamiętaj aby zezwolić przeglądarce na korzystanie z kamery. {<br />}
+              Brak Permisji może oznaczać czarny ekran.
+            </h5>
+          </footer>
         </div>
       )}
 
