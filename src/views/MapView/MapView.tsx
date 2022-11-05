@@ -20,26 +20,20 @@ interface MapViewProps {
 
 export const MapView: React.FC<MapViewProps> = () => {
 
+    console.log('render mapView')
+
     // implement useContext 
     const data = JSON.parse(JSON.stringify(mockData)) as MapResponse;
 
     const ref = useRef(null) 
     const { state } = useAppContext()
-
-    console.log('state');
-    console.log(state);
-
     const filteredData = data.path.filter( point => point.floors[0] === state.currentChosenFloor)
 
     useEffect(() => {
         const svgRef = d3.select(ref.current)
         filteredData.map(
             point => {
-                console.log('point')
-                console.log(point)
                 const area = JSON.parse(JSON.parse(JSON.stringify(point.floorArea)));
-                console.log('area')
-                console.log(area)
                 return (
                     svgRef.append('polygon') 
                     .attr('points', `${area[state.currentChosenFloor].join(" ")}`).

@@ -18,7 +18,7 @@ function App() {
             <Route path="/Loading" element={<LoadingView />} />
             <Route path="/Map" element={<MapView />} />
             <Route path="/Path" element={<PathView />} />
-            <Route path="/Search" element={<SearchPlaceView />} />
+            <Route path="/Search/:startId" element={<SearchPlaceView />} />
           </Routes>
         </Router> 
       </AppContext.Provider>
