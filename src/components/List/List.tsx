@@ -53,9 +53,9 @@ export const List: React.FC<ListProps> = ({ items, floors }) => {
       {items.map((item, index) => {
         return (
           <>
-            <label onClick={() => nav('/PlaceDetails', { state: { item } })}>
-              {generateTitle(item)}
-              <li className={styles.listItem}>
+          {generateTitle(item)} 
+            <label>
+              <li className={styles.listItem} onClick={() => nav('/PlaceDetails', { state: { item } })}>
                 <h4 className={styles.index}>{index}.</h4>
                 <p>{item.name}</p>
               </li>
