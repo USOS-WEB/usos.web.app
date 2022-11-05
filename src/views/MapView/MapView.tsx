@@ -9,7 +9,7 @@ import { Header } from '../../components/Header/Header'
 import { List } from '../../components/List/List'
 
 import styles from './MapView.module.css'
-import mapView from '../../images/Map.png'
+import mapView from '../../images/BT.png'
 import mockData from '../../mocks/searchMock.json'
 import {MapResponse} from '../../types'
 
@@ -36,8 +36,8 @@ export const MapView: React.FC<MapViewProps> = () => {
                 const area = JSON.parse(JSON.parse(JSON.stringify(point.floorArea)));
                 return (
                     svgRef.append('polygon') 
-                    .attr('points', `${area[state.currentChosenFloor].join(" ")}`).
-                    attr('fill', '#001D3D').attr('opacity', '0.3') 
+                    .attr('points', `${area[state.currentChosenFloor].join(" ")}`)
+                    .attr('fill', '#001D3D').attr('opacity', '0.3') 
                 )  
             }
         )

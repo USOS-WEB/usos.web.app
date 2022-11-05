@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import styles from './Header.module.css';
 
 interface HeaderProps {
@@ -5,7 +6,11 @@ interface HeaderProps {
 }
 
 export const Header: React.FC<HeaderProps> = ({title}) => {
+
+    const navigate = useNavigate()
     return (
-    <header className={styles.container}>{title}</header>
+    <header onClick={() => {
+        navigate("/")
+    }} className={styles.container}>{title}</header>
     );
 }
