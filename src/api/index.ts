@@ -7,12 +7,13 @@ export async function fetchPath(startId: string, selectedId: string){
     if(selectedId && startId){
 
         
-        console.log({body: JSON.stringify({ "start": "142355", "stop": "111028" })})
+      console.log({body: JSON.stringify({ "start": "142355", "stop": "111028" })})
       const requestOptions = { 
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
             "start": startId, "stop": selectedId
+            
         })
       };
   

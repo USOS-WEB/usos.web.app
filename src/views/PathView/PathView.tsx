@@ -4,6 +4,7 @@ import { List } from '../../components/List/List'
 import { Header } from '../../components/Header/Header'
 import { useAppContext } from '../../context/AppContext'
 import { Spinner } from '../../components/Spinner/Spinner'
+import {LinkButton} from '../../components/LinkButton/LinkButton'
 
 interface PathViewProps {
 
@@ -31,7 +32,8 @@ export const PathView: React.FC<PathViewProps> = () => {
             <h1 className={styles.heading}>Twoja trasa</h1>
             <p className={styles.subheading}>Naciśnij na nazwę aby zobaczyć szczegóły budynku lub miejsca.</p>
             <List items={state.mapResponseData.path} floors={state.mapResponseData.floors}/>
+            <LinkButton href="/" text="Finish" />
         </main>
         </>
-    )
+    ) 
 }

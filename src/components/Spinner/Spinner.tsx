@@ -10,7 +10,6 @@ export const Spinner = () => {
         <div className={styles.shadow}></div>
         <div className={styles.shadow}></div>
         <div className={styles.shadow}></div>
-        <span>Loading</span>
       </div>
     </>
   )
