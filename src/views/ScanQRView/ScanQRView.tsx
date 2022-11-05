@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom'
 import { Header } from '../../components/Header/Header'
 import { Button } from '../../components/Button/Button'
 import { useEffect, useState } from 'react'
-import Spinner from '../../components/Spinner/Spinner'
 
 interface ScanQRViewProps {
   title: string
