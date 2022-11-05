@@ -47,7 +47,7 @@ export const ScanQRView = ({ title }: ScanQRViewProps) => {
           <Button
             text="Submit"
             onClick={() => {
-              if (state.qrData) {
+              if (state.qrData != 'nodata') {
                 setIsSpinnerVisible(true)
                 setTimeout(() => navigate('/search/' + state.qrData), 5000)
               }

@@ -8,7 +8,7 @@ export type AppContextState = {
 
 export const defaultAppContextState = {
   appTitle: 'USOS - Uprzejmie Ssij OS',
-  qrData: 'No data',
+  qrData: 'nodata',
 }
 
 export function reducer(state: AppContextState, action: { type: string; payload: any }) {
