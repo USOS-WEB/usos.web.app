@@ -1,0 +1,13 @@
+.header {
+  font-weight: bold;
+}
+
+.container {
+  padding: 20px;
+}
+
+.image {
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: preserve-aspect;
+}
