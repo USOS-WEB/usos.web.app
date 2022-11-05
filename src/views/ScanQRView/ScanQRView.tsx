@@ -20,6 +20,7 @@ export const ScanQRView = ({ title }: ScanQRViewProps) => {
 
   useEffect(()=>{
     if(result){
+      dispatch({ type: 'setQrData', payload: result })
       navigate('/Search/' + result)
     }
   }, [result])
@@ -35,8 +36,9 @@ export const ScanQRView = ({ title }: ScanQRViewProps) => {
           <QrReader
             onResult={(r) => {
               if (!!r) {
-                dispatch({ type: 'setQrData', payload: r.getText() })
-                setResult(r.getText())
+                if(r.getText() !== result){
+                  setResult(r.getText())
+                }
               }
             }}
             constraints={{}}
