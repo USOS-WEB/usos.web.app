@@ -49,17 +49,18 @@ export const ScanQRView = ({ title }: ScanQRViewProps) => {
                 setResult(r.getText())
               }
             }
-          }}
+          }} 
           constraints={{ facingMode: 'environment' }}
         />
       </div>
 
       <div className="downPanel" style={{ textAlign: 'center' }}>
         <p>...lub wpisz liczbę pod kodem QR:</p>
-        <input placeholder="6 cyfrowy kod" onChange={e => setInputValue(e.target.value)}></input>
+        <input maxLength={6} placeholder="6 cyfrowy kod" onChange={e => setInputValue(e.target.value)} className={styles.qrInput}></input>
         <br />
         <br />
         <Button
+          disabled={inputValue.length < 6}
           text="Submit"
           onClick={() => {
             navigate('/Search/' + inputValue)
