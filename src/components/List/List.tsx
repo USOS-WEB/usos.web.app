@@ -21,18 +21,9 @@ export const List: React.FC<ListProps> = ({items, floors}) => {
     }
 
     function generateTitle(item: PathPoint){
-
-        console.log('floors');
-        console.log(floors);
-        console.log('item.floors[0]')
-        console.log(item.floors[0])
-
-
         if (currentFloor !== item.floors[0]){
             currentFloor = item.floors[0];
-            const chosenFloor = floors.find(floor => { console.log('floor'); console.log(floor);  return floor.id == item.floors[0] as any})
-            console.log('chosenFloor')
-            console.log(chosenFloor)
+            const chosenFloor = floors.find(floor => { return floor.id == item.floors[0] as any})
             return (<div className={styles.titleContainer}>
                 <div className={styles.floor}>
                 <img src={building} className={styles.image}/>

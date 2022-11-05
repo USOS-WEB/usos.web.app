@@ -3,7 +3,7 @@ import { QrReader } from 'react-qr-reader'
 import { useNavigate } from 'react-router-dom'
 import { Header } from '../../components/Header/Header'
 import { Button } from '../../components/Button/Button'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Spinner from '../../components/Spinner/Spinner'
 
 interface ScanQRViewProps {
@@ -11,16 +11,20 @@ interface ScanQRViewProps {
 }
 
 export const ScanQRView = ({ title }: ScanQRViewProps) => {
+  console.log('render ScanQRView')
   const { state, dispatch } = useAppContext()
+  const [inputValue, setInputValue] = useState('')
+  const [result, setResult] = useState('')
+
   let navigate = useNavigate()
-  const [value, setVal] = useState()
-  const handleInput = (e: any) => {
-    const val = e.target.value
-    dispatch({ type: 'setQrData', payload: val })
-  }
 
-  const [isSpinnerVisible, setIsSpinnerVisible] = useState(false)
-
+  useEffect(()=>{
+    if(result){
+      dispatch({ type: 'setQrData', payload: result })
+      navigate('/Search/' + result)
+    }
+  }, [result])
+  
   return (
     <>
       <Header title="Uniwersalny System Odnalezienia Sal" />
@@ -28,37 +32,29 @@ export const ScanQRView = ({ title }: ScanQRViewProps) => {
       <br />
       <h2 style={{ fontSize: 'bold', paddingLeft: '15px' }}>Nie możesz znaleźć sali?</h2>
       <h3 style={{ paddingLeft: '15px' }}>Zeskanuj najbliższy kod QR...</h3>
-      {!isSpinnerVisible && (
         <div style={{ margin: '0 15px' }}>
           <QrReader
-            onResult={(result, error) => {
-              if (result) {
-                dispatch({ type: 'setQrData', payload: result.getText() })
-                navigate('/search/' + result.getText())
-              }
-
-              if (error) {
+            onResult={(r) => {
+              if (!!r) {
+                if(r.getText() !== result){
+                  setResult(r.getText())
+                }
               }
             }}
             constraints={{}}
           />
         </div>
-      )}
-
-      {!isSpinnerVisible && (
+       
         <div className="downPanel" style={{ textAlign: 'center' }}>
           <p>...lub wpisz liczbę pod kodem QR:</p>
-          <input placeholder="6 cyfrowy kod" onChange={e => handleInput(e)}></input>
+          <input placeholder="6 cyfrowy kod" onChange={e => setInputValue(e.target.value)}></input>
           <br />
           <br />
           <Button
             text="Submit"
             onClick={() => {
-              if (state.qrData != 'nodata') {
-                setIsSpinnerVisible(true)
-                setTimeout(() => navigate('/search/' + state.qrData), 5000)
-              }
-            }}
+              navigate('/Search/' + state.qrData)
+            }} 
           ></Button>
           <br />
           <footer>
@@ -68,9 +64,6 @@ export const ScanQRView = ({ title }: ScanQRViewProps) => {
             </h5>
           </footer>
         </div>
-      )}
-
-      {isSpinnerVisible && <Spinner />}
     </>
   )
 }

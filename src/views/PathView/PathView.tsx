@@ -12,13 +12,20 @@ interface PathViewProps {
 
 export const PathView: React.FC<PathViewProps> = () => {
 
+
+  console.log('render PathView')
+
     const data = JSON.parse(JSON.stringify(mockData)) as MapResponse;
 
     const { state } = useAppContext()
 
     // if(!state.currentChosenFloor){
     //     return <Navigate to="/" />
-    // }
+    // } 
+
+    if(!state.mapResponseData?.path.length){
+        return <h1>is Loading</h1>
+    }
 
     return (
         <>

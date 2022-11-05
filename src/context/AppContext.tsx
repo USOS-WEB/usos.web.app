@@ -17,6 +17,7 @@ export const defaultAppContextState = {
 }
 
 export function reducer(state: AppContextState, action: { type: string; payload: any }) {
+  console.log(action);
   switch (action.type) {
     case SET_APP_TITLE:
       return { ...state, appTitle: action.payload }
