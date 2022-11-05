@@ -4,6 +4,7 @@ import { List } from '../../components/List/List'
 import { Header } from '../../components/Header/Header'
 import mockData from '../../mocks/searchMock.json'
 import {MapResponse} from '../../types'
+import { useAppContext } from '../../context/AppContext'
 
 interface PathViewProps {
 
@@ -11,7 +12,13 @@ interface PathViewProps {
 
 export const PathView: React.FC<PathViewProps> = () => {
 
-const data = JSON.parse(JSON.stringify(mockData)) as MapResponse;
+    const data = JSON.parse(JSON.stringify(mockData)) as MapResponse;
+
+    const { state } = useAppContext()
+
+    // if(!state.currentChosenFloor){
+    //     return <Navigate to="/" />
+    // }
 
     return (
         <>

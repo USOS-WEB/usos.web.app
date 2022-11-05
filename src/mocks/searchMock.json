@@ -1,94 +1,48 @@
 {
     "path": [
         {
-            "id": "123",
+            "id": "987658",
             "name": "0.5.3",
-            "floors": [
-                "264878"
-            ],
-
-            "img": [
-                "URL do zdjęcia przedstawiającego miejsce"
-            ],
-            "description": "Ewentualny dłuższy opis danego miejsca",
-            "floorArea": {
-                "264878": [
-                    [[359,49] , [400,49], [400,311], [380,310] , [372,223], [370,194], [364,120], [346,120], [346,104], [363,104]] 
-                ]  
-            } 
+            "description": "Sala znajduje się na końcu korytarza łączącego wejście do biblioteki technicznej z przeszklonym widokiem na Wartę.\nWejście znajduje się we wnęce po lewej stronie (patrząc w stronę Warty).",
+            "floorArea": "{\"101\":[[359,49] , [400,49], [400,311], [380,310] , [372,223], [370,194], [364,120], [346,120], [346,104], [363,104]]}",
+            "img": "/images/points/987658.png",
+            "width": "",
+            "height": "",
+            "floors": [ 
+                "101"
+            ]
         },
         {
-            "id": "456",
-            "name": "Korytarz RATUSZ",
+            "id": "769221",
+            "name": "Podłużny korytarz przy tablicach pamiątkowych (wzdłuż CW) ",
+            "description": "Korytarz biegnie w stronę przeszklonego widoku na Wartę.",
+            "floorArea": "{\"101\": [[249,36], [358,36], [363,104], [347,104], [347,120], [275,120], [275,92], [249,92]]}",
+            "img": "/images/points/769221.png",
+            "width": "",
+            "height": "",
             "floors": [
-                "264878"
-            ],
-
-            "img": [
-                "URL do zdjęcia przedstawiającego miejsce"
-            ],
-
-            "description": "Ewentualny dłuższy opis danego miejsca",
-            "floorArea": {
-                "264878": [
-                    [[249,36], [358,36], [363,104], [347,104], [347,120], [275,120], [275,92], [249,92]] 
-                ]  
-            } 
-        },
-        {
-            "id": "908",
-            "name": "0.5.3",
-            "floors": [
-                "658481"
-            ],
-
-            "img": [
-                "URL do zdjęcia przedstawiającego miejsce"
-            ],
-            "description": "Ewentualny dłuższy opis danego miejsca",
-            "floorArea": {
-                "658481": [
-                    [[359,49] , [400,49], [400,311], [380,310] , [372,223], [370,194], [364,120], [346,120], [346,104], [363,104]] 
-                ]  
-            } 
-        },
-        {
-            "id": "121",
-            "name": "Korytarz RATUSZ",
-            "floors": [
-                "658481"
-            ],
-
-            "img": [
-                "URL do zdjęcia przedstawiającego miejsce"
-            ],
-
-            "description": "Ewentualny dłuższy opis danego miejsca",
-            "floorArea": {
-                "658481": [
-                    [[249,36], [358,36], [363,104], [347,104], [347,120], [275,120], [275,92], [249,92]] 
-                ]  
-            } 
+                "101"
+            ]
         }
-],
-
-    "floors": {
-        "264878": {
+    ],
+    "floors": [
+        {
+            "id": 100,
+            "name": "CW - parter",
+            "Image": {
+                "url": "/images/CW.png",
+                "width": 400,
+                "height": 400
+            }
+        },
+        {
+            "id": 101,
             "name": "BT - parter",
-            "image": {
-                "url": "<URL zdjęcia mapki>",
-                "width": 123, 
-                "height": 456
-            }
-        },
-
-        "658481": {
-            "name": "BT - piętro 1",
-            "image": {
-                "url": "<URL zdjęcia mapki>",
-                "width": 1000,
-                "height": 2000 
+            "Image": {
+                "url": "/images/BT.png",
+                "width": 400,
+                "height": 400
             }
         }
-    }
+    ]
 }
