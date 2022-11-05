@@ -85,7 +85,7 @@ export const SearchPlaceView = () => {
               <SearchBar caption='Wybierz budynek' source={buildingIcon} alt='budynek' filterText={"CW/BT"} onFilterTextChange={() => {}} />
               <SearchBar caption='Wybierz salę' source={searchIcon} alt='wyszukiwanie' filterText={currentChosenPathName} onFilterTextChange={() => {}}   />
           </div>
-          <DestinationSelection caption='Wybierz miejsce docelowe' filterText={''} points={points as any} onClick={selectPathId}/>
+          <DestinationSelection caption='Wybierz miejsce docelowe' filterText={''} points={points as any} onClick={selectPathId} selectedId={selectedId}/>
           <LinkButton href="/Path" text="Nawiguj" onClick={fetchChosenPath}/>
       </div>
     </div>
