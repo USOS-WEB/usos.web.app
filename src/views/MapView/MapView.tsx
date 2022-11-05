@@ -12,6 +12,9 @@ import CW from '../../images/CW.png'
 import BT from '../../images/BT.png'
 
 import styles from './MapView.module.css'
+import mapView from '../../images/BT.png'
+import mockData from '../../mocks/searchMock.json'
+import {MapResponse} from '../../types'
 
 
 interface MapViewProps {
@@ -49,8 +52,6 @@ export const MapView: React.FC<MapViewProps> = () => {
     if(!state.mapResponseData?.path){
         return <Spinner/>
     }
-
-
 
     //249,36 358,36 363,104 347,104 347,120 275,120 275,92 249,92
     //359,49 400,49 400,311 380,310 372,223 370,194 364,120 346,120 346,104 363,104

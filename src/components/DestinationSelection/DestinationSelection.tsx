@@ -6,9 +6,10 @@ interface DestinationSelectionProps {
     filterText: string;
     points: any[]
     onClick: (point: any) => void
+    selectedId: string
 }
 
-export const DestinationSelection: React.FC<DestinationSelectionProps> = ({caption, points, onClick}) => {
+export const DestinationSelection: React.FC<DestinationSelectionProps> = ({caption, points, onClick, selectedId}) => {
 
     // const rooms = JSON.parse(JSON.stringify(pointsMock));
     // const roomElements: Array<JSX.Element> = [];
@@ -28,7 +29,7 @@ export const DestinationSelection: React.FC<DestinationSelectionProps> = ({capti
         <div className={styles.container}>
             <label className={styles.label} htmlFor={caption}>{caption}</label>
             <div className={styles.selection}>
-                {realPoints.length && realPoints.map( (point: any) => <Selection name={point.name} key={point.id} onClick={() => { onClick(point)}}/>)}
+                {realPoints.length && realPoints.map( (point: any) => <Selection isActive={selectedId === point.id} name={point.name} key={point.id} onClick={() => { onClick(point)}}/>)}
             </div>
         </div>
     );
