@@ -7,7 +7,7 @@ export type AppContextState = {
 }
 
 export const defaultAppContextState = {
-  appTitle: 'USOS.WEB.APP',
+  appTitle: 'USOS - Uprzejmie Ssij OS',
   qrData: 'No data',
 }
 
