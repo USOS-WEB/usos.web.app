@@ -5,6 +5,8 @@ import { Header } from '../../components/Header/Header'
 import { Button } from '../../components/Button/Button'
 import { useEffect, useState } from 'react'
 
+import styles from './ScanQRView.module.css'
+
 interface ScanQRViewProps {
   title: string
 }
@@ -14,6 +16,12 @@ export const ScanQRView = ({ title }: ScanQRViewProps) => {
   const { state, dispatch } = useAppContext()
   const [inputValue, setInputValue] = useState('')
   const [result, setResult] = useState('')
+
+  useEffect(() => {
+    if(inputValue.length === 6){
+      dispatch({ type: 'setQrData', payload: inputValue })
+    }
+  } , [inputValue])
 
   let navigate = useNavigate()
 
@@ -46,7 +54,7 @@ export const ScanQRView = ({ title }: ScanQRViewProps) => {
        
         <div className="downPanel" style={{ textAlign: 'center' }}>
           <p>...lub wpisz liczbę pod kodem QR:</p>
-          <input placeholder="6 cyfrowy kod" onChange={e => setInputValue(e.target.value)}></input>
+          <input maxLength={6} placeholder="6 cyfrowy kod" onChange={e => setInputValue(e.target.value)} className={styles.qrInput}></input>
           <br />
           <br />
           <Button

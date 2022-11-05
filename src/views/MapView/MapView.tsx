@@ -12,9 +12,6 @@ import CW from '../../images/CW.png'
 import BT from '../../images/BT.png'
 
 import styles from './MapView.module.css'
-import mapView from '../../images/BT.png'
-import mockData from '../../mocks/searchMock.json'
-import {MapResponse} from '../../types'
 
 
 interface MapViewProps {

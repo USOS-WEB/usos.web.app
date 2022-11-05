@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {Link} from 'react-router-dom'
 import { useAppContext } from '../../context/AppContext'
 import styles from './List.module.css';
@@ -18,8 +18,6 @@ export const List: React.FC<ListProps> = ({items, floors}) => {
 
     function changeCurrentFloor(currentFloor: any){
         return function(){
-            console.log('currentFloor')
-            console.log(currentFloor);
             dispatch({type: 'CHANGE_CURRENT_CHOSEN_FLOOR', payload: currentFloor})
         }
     }
@@ -50,7 +48,7 @@ export const List: React.FC<ListProps> = ({items, floors}) => {
                     <>
                         {generateTitle(item)}
                         <li className={styles.listItem}>
-                            <h4 className={styles.index}>{index}.</h4>
+                            <h4 className={styles.index}>{index + 1}.</h4>
                             <p>{item.name}</p>
                         </li>
                     </>
