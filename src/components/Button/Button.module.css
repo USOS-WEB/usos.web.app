@@ -17,3 +17,7 @@
 .button:active {
     background-color: #002e5e;
 }
+
+.button:disabled{
+    opacity: 0.4;
+}
