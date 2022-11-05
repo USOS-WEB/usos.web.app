@@ -5,6 +5,8 @@ import { Header } from '../../components/Header/Header'
 import { Button } from '../../components/Button/Button'
 import { useEffect, useState } from 'react'
 
+import styles from './ScanQRView.module.css'
+
 interface ScanQRViewProps {
   title: string
 }
@@ -14,6 +16,12 @@ export const ScanQRView = ({ title }: ScanQRViewProps) => {
   const { state, dispatch } = useAppContext()
   const [inputValue, setInputValue] = useState('')
   const [result, setResult] = useState('')
+
+  useEffect(() => {
+    if(inputValue.length === 6){
+      dispatch({ type: 'setQrData', payload: inputValue })
+    }
+  } , [inputValue])
 
   let navigate = useNavigate()
 
@@ -26,8 +34,7 @@ export const ScanQRView = ({ title }: ScanQRViewProps) => {
 
   return (
     <>
-      <Header title="Uniwersalny System Odnalezienia Sal" />
-      <br />
+      <Header title="Uniwersalny System Odnalezienia Sali" />
       <br />
       <h2 style={{ fontSize: 'bold', paddingLeft: '15px' }}>Nie możesz znaleźć sali?</h2>
       <h3 style={{ paddingLeft: '15px' }}>Zeskanuj najbliższy kod QR...</h3>

@@ -4,11 +4,13 @@ import { List } from '../../components/List/List'
 import { Header } from '../../components/Header/Header'
 import { useAppContext } from '../../context/AppContext'
 import { Spinner } from '../../components/Spinner/Spinner'
+import {LinkButton} from '../../components/LinkButton/LinkButton'
 
 interface PathViewProps {}
 
 export const PathView: React.FC<PathViewProps> = () => {
   console.log('render PathView')
+
 
   const { state } = useAppContext()
 

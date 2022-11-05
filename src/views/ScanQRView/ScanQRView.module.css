@@ -1,0 +1,44 @@
+.qrInput{
+    padding: 10px 20px;
+    width: 300px;
+    border-radius: 15px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: 0.2px;
+}
+
+.texth{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    padding-left: 15px;
+}
+
+.text {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: 0.2px;
+    padding-left: 15px;
+}
+
+.footer {
+    color: #767676;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    padding: 0 19px;
+    text-align: center;
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

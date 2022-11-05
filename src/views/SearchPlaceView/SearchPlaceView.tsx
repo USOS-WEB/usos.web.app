@@ -1,8 +1,7 @@
-import { useEffect, useState, useRef } from 'react'
+import { useEffect, useState } from 'react'
 import {useParams} from 'react-router-dom'
 import { Header } from '../../components/Header/Header' 
 import { useAppContext } from '../../context/AppContext'
-import { useNavigate } from 'react-router-dom';
 
 import { SearchBar } from '../../components/SearchBar/SearchBar'
 import { Spinner } from '../../components/Spinner/Spinner'
@@ -15,30 +14,6 @@ import styles from './SearchPlaceView.module.css';
 import { DestinationSelection } from '../../components/DestinationSelection/DestinationSelection'
 
 import {fetchPossiblePoints, fetchPath} from '../../api'
-
-
-type NavigateProps = {
-  to: string;
-  replace: boolean;
-  state: any;
-}
-
-const Navigate: React.FC<NavigateProps> = ({ to, replace, state }) => {
-  const navigate = useNavigate();
-  const navigateRef = useRef(navigate);
-
-  useEffect(() => {
-    navigateRef.current = navigate;
-  }, [navigate]);
-
-  useEffect(() => {
-    navigateRef.current(to, { replace, state });
-  }, [to, replace, state]);
-
-  return null;
-};
-
-
 
 export const SearchPlaceView = () => {
 
