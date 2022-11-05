@@ -12,6 +12,7 @@
     border-style: none;
     box-shadow: 4px 8px 24px rgba(77, 93, 250, 0.25);
     border-radius: 100px;
+    margin: 24px 0;
 }
 
 .button:active {
