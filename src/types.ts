@@ -15,12 +15,11 @@ export interface PathPoint {
 }
 
 export interface Floor {
-    [id: string]: {
+        id: string;
         name: string
         image: {
             url: string;
             width: number;
             height: number;
         }
-    }
 }

@@ -16,14 +16,19 @@ export const List: React.FC<ListProps> = ({items, floors}) => {
     let currentFloor = ''
     const { dispatch } = useAppContext()
 
-    function changeCurrentFloor(){
-        dispatch({type: 'CHANGE_CURRENT_CHOSEN_FLOOR', payload: currentFloor})
+    function changeCurrentFloor(currentFloor: any){
+        return function(){
+            console.log('currentFloor')
+            console.log(currentFloor);
+            dispatch({type: 'CHANGE_CURRENT_CHOSEN_FLOOR', payload: currentFloor})
+        }
     }
 
     function generateTitle(item: PathPoint){
         if (currentFloor !== item.floors[0]){
-            currentFloor = item.floors[0];
+            currentFloor = item.floors[0]
             const chosenFloor = floors.find(floor => { return floor.id == item.floors[0] as any})
+            const onClick = changeCurrentFloor(item.floors[0])
             return (<div className={styles.titleContainer}>
                 <div className={styles.floor}>
                 <img src={building} className={styles.image}/>
@@ -31,7 +36,7 @@ export const List: React.FC<ListProps> = ({items, floors}) => {
                 <h2>{chosenFloor.name}</h2> 
             </div>
             <div className={styles.showMapButtonContainer}>
-                <Link to='/Map' onClick={changeCurrentFloor} className={styles.showMapButton}>Wyświetl mapę piętra</Link>
+                <Link to='/Map' onClick={onClick} className={styles.showMapButton}>Wyświetl mapę piętra</Link>
             </div>
             </div>)
         }

@@ -1,6 +1,6 @@
 import styles from './Spinner.module.css'
 
-const Spinner = () => {
+export const Spinner = () => {
   return (
     <>
       <div className={styles.wrapper}>
@@ -15,5 +15,3 @@ const Spinner = () => {
     </>
   )
 }
-
-export default Spinner

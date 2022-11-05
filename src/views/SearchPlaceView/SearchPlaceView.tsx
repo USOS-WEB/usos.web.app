@@ -5,6 +5,7 @@ import { useAppContext } from '../../context/AppContext'
 import { useNavigate } from 'react-router-dom';
 
 import { SearchBar } from '../../components/SearchBar/SearchBar'
+import { Spinner } from '../../components/Spinner/Spinner'
 import { LinkButton } from '../../components/LinkButton/LinkButton'
 
 import buildingIcon from '../../images/building.svg'
@@ -74,7 +75,7 @@ export const SearchPlaceView = () => {
   }
 
   if(!points.length || isLoading){
-    return <h3>Is Loading</h3>
+    return <Spinner/>
   }
   
   return (
