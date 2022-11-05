@@ -37,8 +37,8 @@ export const MapView: React.FC<MapViewProps> = () => {
                     const area = JSON.parse(JSON.parse(JSON.stringify(point.floorArea)));
                     return (
                         svgRef.append('polygon') 
-                        .attr('points', `${area[state.currentChosenFloor].join(" ")}`).
-                        attr('fill', '#001D3D').attr('opacity', '0.3') 
+                        .attr('points', `${area[state.currentChosenFloor].join(" ")}`)
+                        .attr('fill', '#001D3D').attr('opacity', '0.3') 
                     )  
                 }
             )
@@ -79,7 +79,7 @@ export const MapView: React.FC<MapViewProps> = () => {
 
     return (
         <>
-            <Header title="USOS - Uprzejmie Ssij OS" />
+            <Header title="Uniwersalny System Odnalezienia Sali" />
             <svg ref={ref} width={400} height={400}/>
             <div className={styles.container} > 
                 <img src={imgSrc} className={styles.img} />

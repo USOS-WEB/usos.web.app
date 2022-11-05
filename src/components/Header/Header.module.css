@@ -9,6 +9,8 @@
     font-weight: 700;
     font-size: 16px;
     padding: 0 24px;
+    letter-spacing: 0.2px;
     display: flex;
     align-items: center;
+
 }

@@ -4,7 +4,8 @@
     border-radius: 15px;
     height: 60px;
     margin: 0 auto;
-    width: 95%;
+    width: 95%; 
+    gap: 8px;
 }
 
 .selectionActive {
@@ -15,4 +16,5 @@
     height: 60px;
     width: 95%;
     background-color: #FFC300;
+    gap: 8px;
 }

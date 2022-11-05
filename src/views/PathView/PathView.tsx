@@ -27,12 +27,14 @@ export const PathView: React.FC<PathViewProps> = () => {
 
     return (
         <>
-        <Header title="USOS"/>
+        <Header title="Uniwersalny System Odnalezienia Sali"/>
         <main className={styles.container} >
-            <h1 className={styles.heading}>Twoja trasa</h1>
-            <p className={styles.subheading}>Naciśnij na nazwę aby zobaczyć szczegóły budynku lub miejsca.</p>
+            <div>
+                <h1 className={styles.heading}>Twoja trasa</h1>
+                <p className={styles.subheading}>Naciśnij na nazwę aby zobaczyć szczegóły budynku lub miejsca.</p>
+            </div>
             <List items={state.mapResponseData.path} floors={state.mapResponseData.floors}/>
-            <LinkButton href="/" text="Finish" />
+            <LinkButton href="/" text="Zakończ" />
         </main>
         </>
     ) 
