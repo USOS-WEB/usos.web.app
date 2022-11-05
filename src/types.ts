@@ -1,13 +1,26 @@
 export interface MapResponse {
-    path: PathPoint[]
+    path: PathPoint[];
+    floors: Floor[];
 }
 
 export interface PathPoint {
-    order: string;
-    id: number;
+    id: string;
     name: string;
     floors: string[];
     img: string;
     description: string;
-    mapCoordinates: number[][];
+    floorArea: {
+        [name: string]: number[][]
+    };
+}
+
+export interface Floor {
+    [id: string]: {
+        name: string
+        image: {
+            url: string;
+            width: number;
+            height: number;
+        }
+    }
 }
