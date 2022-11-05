@@ -12,8 +12,7 @@ interface ScanQRViewProps {
 }
 
 export const ScanQRView = ({ title }: ScanQRViewProps) => {
-  console.log('render ScanQRView')
-  const { state, dispatch } = useAppContext()
+  const { dispatch } = useAppContext()
   const [inputValue, setInputValue] = useState('')
   const [result, setResult] = useState('')
 
@@ -24,6 +23,10 @@ export const ScanQRView = ({ title }: ScanQRViewProps) => {
   } , [inputValue])
 
   let navigate = useNavigate()
+
+  useEffect(() => {
+    dispatch({ type: 'SET_DEFAULT_STATE' })
+  }, [])
 
   useEffect(() => {
     if (result) {

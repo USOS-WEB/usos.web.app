@@ -56,7 +56,7 @@ export const List: React.FC<ListProps> = ({ items, floors }) => {
           {generateTitle(item)} 
             <label>
               <li className={styles.listItem} onClick={() => nav('/PlaceDetails', { state: { item } })}>
-                <h4 className={styles.index}>{index}.</h4>
+                <h4 className={styles.index}>{index + 1}.</h4>
                 <p>{item.name}</p>
               </li>
             </label>
